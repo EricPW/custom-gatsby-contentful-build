@@ -42,6 +42,7 @@ const ColPull = styled(Col)`
     order: 0;
   }
 `
+const SectionExpertise = styled.div``
 
 const SidebarImage = styled.div`
   height: auto;
@@ -268,6 +269,19 @@ const HomePage = (props) => {
             </Row>
           </Container>
         </SectionTop>
+        <SectionExpertise>
+          <Container style={{
+            paddingLeft: ['md', 'lg', 'xl'].includes(screenClass) ? '3rem' : '1.5625rem',
+            paddingRight: ['md', 'lg', 'xl'].includes(screenClass) ? '3rem' : '1.5625rem'
+          }}>
+            <Row>
+              <Col xl={3} offset={{ lg: 2 }}>
+                <h1 className={`headline`}>Expertise</h1>
+              </Col>
+              <Col lg={8} xl={6} offset={{ lg: 2, xl: 0 }} />
+            </Row>
+          </Container>
+        </SectionExpertise>
       </StyledMain>
     </Layout>
   )

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import PwSvg from '../../images/30.svg'
+import PwSvg from '../../images/50.svg'
 import PwSvgWhite from '../../images/200x50.svg'
 import PwSvgCircle from '../../images/200x50.svg'
 
@@ -18,7 +18,7 @@ const Logos = ({ ...props }) => {
       white: file(relativePath: { eq: "200x50.png" }) {
         ...headerLogo
       }
-      circle: file(relativePath: { eq: "30.png" }) {
+      circle: file(relativePath: { eq: "50.png" }) {
         ...pwCircleLogo
       }
       site {

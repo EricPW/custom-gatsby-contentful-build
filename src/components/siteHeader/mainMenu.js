@@ -3,7 +3,6 @@ import { Container, Row, Col, useScreenClass, Visible } from 'react-grid-system'
 import styled from 'styled-components'
 import CloseMenuButton from './closeMenuButton'
 import Navigation from './navigation'
-import ImageList from './imageList'
 
 // Styled Components
 
@@ -62,13 +61,6 @@ const MainMenu = (props) => {
       >
         <StyledContainer fluid>
           <StyledRow nogutter>
-            <Visible lg xl>
-              <LeftCol>
-                <Visible lg xl>
-                  <ImageList />
-                </Visible>
-              </LeftCol>
-            </Visible>
             <RightCol lg={6}>
               <RightRowInner style={{
                 paddingLeft: ['xs', 'sm'].includes(screenClass) ? '1.5625rem' : ['md'].includes(screenClass) ? '3rem' : '0',
