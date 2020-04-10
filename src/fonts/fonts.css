@@ -1,0 +1,96 @@
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 700;
+  font-style: normal;
+  src: url("ModernoFB-Bold.woff2") format("woff2"),
+      url("ModernoFB-Bold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 700;
+  font-style: italic;
+  src: url("ModernoFB-BoldItalic.woff2") format("woff2"),
+      url("ModernoFB-BoldItalic.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 300;
+  font-style: normal;
+  src: url("ModernoFB-Light.woff2") format("woff2"),
+      url("ModernoFB-Light.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 300;
+  font-style: italic;
+  src: url("ModernoFB-LightItalic.woff2") format("woff2"),
+      url("ModernoFB-LightItalic.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 400;
+  font-style: normal;
+  src: url("ModernoFB-Regular.woff2") format("woff2"),
+      url("ModernoFB-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 400;
+  font-style: italic;
+  src: url("ModernoFB-RegularItalic.woff2") format("woff2"),
+      url("ModernoFB-RegularItalic.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 500;
+  font-style: normal;
+  src: url("ModernoFB-Semibold.woff2") format("woff2"),
+      url("ModernoFB-Semibold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: ModernoFB;
+  font-weight: 500;
+  font-style: italic;
+  src: url("ModernoFB-SemiboldItalic.woff2") format("woff2"),
+      url("ModernoFB-SemiboldItalic.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Omnes;
+  font-weight: 300;
+  font-style: normal;
+  src: url("OmnesLight.woff2") format("woff2"),
+      url("OmnesLight.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Omnes;
+  font-weight: 400;
+  font-style: normal;
+  src: url("OmnesRegular.woff2") format("woff2"),
+      url("OmnesRegular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Omnes;
+  font-weight: 500;
+  font-style: normal;
+  src: url("OmnesMedium.woff2") format("woff2"),
+      url("OmnesMedium.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Omnes;
+  font-weight: 600;
+  font-style: normal;
+  src: url("OmnesSemiBold.woff2") format("woff2"),
+      url("OmnesSemiBold.woff") format("woff");
+  font-display: swap;
+}

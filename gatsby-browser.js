@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import "./src/styles/reset.css"
+import "./src/fonts/fonts.css"
 
-// You can delete this file if you're not using it
+export const onRouteUpdate = ({ location, prevLocation }) => {
+  const classes = document.body.className.split(" ").filter(c => !c.startsWith('is-intersecting'))
+  document.body.className = classes.join(" ").trim()
+  document.body.classList.remove('show-main-menu')
+}

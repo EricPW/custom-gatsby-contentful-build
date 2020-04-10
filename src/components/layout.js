@@ -1,51 +1,39 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React, { useState, useEffect } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { ThemeProvider } from 'styled-components'
+import { setConfiguration } from 'react-grid-system'
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import theme from '../styles/theme'
+import GlobalStyle from '../styles/global'
+import SiteHeader from './siteHeader/siteHeader'
+import SiteFooter from './sitefooter/siteFooter'
 
-import Header from "./header"
-import "./layout.css"
+setConfiguration({
+  breakpoints: [576, 768, 1028, 1366],
+  containerWidths: [768, 1028, 1366, 1640],
+  gutterWidth: 16,
+})
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
-        siteMetadata {
-          title
-        }
+        ...siteMeta
       }
     }
   `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+  return typeof window !== 'undefined' && (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <SiteHeader
+        siteTitle={data.site.siteMetadata.title}
+      />
+      {children}
+      <SiteFooter />
+    </ThemeProvider>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout
