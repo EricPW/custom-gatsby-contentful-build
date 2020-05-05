@@ -3,9 +3,9 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import PwSvg from '../../images/50.svg'
-import PwSvgWhite from '../../images/200x50.svg'
-import PwSvgCircle from '../../images/200x50.svg'
+import Img50 from '../../images/200x50.png'
+import ImgWhite from '../../images/200x50.png'
+import ImgCircle from '../../images/50.png'
 
 
 
@@ -55,7 +55,7 @@ const Logo = (props) => {
       className={props.className}
       onClick={(e) => handleClick()}
     >
-      <img src={PwSvg} alt="Lorem Ipsum" />
+      <img src={Img50} alt="Lorem Ipsum" />
       <Brand>Lorem Ipsum</Brand>
     </Link>
   )
@@ -64,7 +64,7 @@ const Logo = (props) => {
 const LogoWhite = (props) => {
   return (
     <Link to={props.to || `/`} className={props.className}>
-      <img src={PwSvgWhite} alt="Lorem Ipsum" />
+      <img src={ImgWhite} alt="Lorem Ipsum" />
       <Brand>Lorem Ipsum</Brand>
     </Link>
   )
@@ -73,7 +73,7 @@ const LogoWhite = (props) => {
 const LogoCircle = (props) => {
   return (
     <Link to={props.to || `/`} className={props.className}>
-      <img src={PwSvgCircle} alt="Lorem Ipsum" />
+      <img src={ImgCircle} alt="Lorem Ipsum" />
       <Brand>Lorem Ipsum</Brand>
     </Link>
   )

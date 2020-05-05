@@ -10,6 +10,8 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SEO from '../components/seo'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
+import ExpertiseList from '../components/expertise/expertiseList'
+import RelatedInsights from '../components/insights/relatedInsights'
 
 //
 // Main content section
@@ -42,7 +44,6 @@ const ColPull = styled(Col)`
     order: 0;
   }
 `
-const SectionExpertise = styled.div``
 
 const SidebarImage = styled.div`
   height: auto;
@@ -79,6 +80,15 @@ const SidebarImageFg = styled(Img)`
     left: 1.8rem;
     max-width: calc(100vw - 92px);
     top: 1.43rem;
+  }
+`
+
+const SectionExpertise = styled.div``
+
+const ExpertiseWrapper = styled.div`
+  margin-top: 3rem;
+  @media only screen and (max-width: ${props => props.theme.breakpoints.tablet}) {
+    margin-top: 0;
   }
 `
 
@@ -255,7 +265,7 @@ const HomePage = (props) => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </>
                 }
-                <Link to={`/`} className={`button`}>See our work</Link>
+                <Link to={`/`} className={`button`}>Lorem Ipsum</Link>
               </ColPush>
               <ColPull lg={6}>
                 <SidebarImage>
@@ -278,10 +288,17 @@ const HomePage = (props) => {
               <Col xl={3} offset={{ lg: 2 }}>
                 <h1 className={`headline`}>Expertise</h1>
               </Col>
-              <Col lg={8} xl={6} offset={{ lg: 2, xl: 0 }} />
+              <Col lg={8} xl={6} offset={{ lg: 2, xl: 0 }}>
+                <ExpertiseWrapper>
+                  <ExpertiseList />
+                </ExpertiseWrapper>
+              </Col>
             </Row>
           </Container>
         </SectionExpertise>
+        {relatedInsights &&
+          <RelatedInsights posts={relatedInsights}/>
+        }
       </StyledMain>
     </Layout>
   )
@@ -289,14 +306,14 @@ const HomePage = (props) => {
 
 export const query = graphql`
   query {
-    homeNurtureBackground: file(relativePath: { eq: "bg-nurture-grow.png" }) {
+    homeNurtureBackground: file(relativePath: { eq: "960x640.png" }) {
       childImageSharp {
         fluid(maxWidth: 960, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    homeNurtureForeground: file(relativePath: { eq: "home-brand-grow.png" }) {
+    homeNurtureForeground: file(relativePath: { eq: "674x533.png" }) {
       ...homeBrandImage
     }
     allContentfulHeroImages(
@@ -329,13 +346,24 @@ export const query = graphql`
       }
       totalCount
     }
-    contentfulPage(slug: {eq: "home-demo"}) {
+    contentfulPage(slug: {eq: "home"}) {
       id
       slug
       name
       mainHeadline
       text {
         json
+      }
+      relatedInsights: insights {
+        id
+        slug
+        title
+        preview
+        image {
+          localFile {
+            ...insightsThumbnail
+          }
+        }
       }
       seoTitle
       seoDescription {

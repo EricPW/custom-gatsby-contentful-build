@@ -241,49 +241,6 @@ const Navigation = (props) => {
             </ul>
           </SubMenu>
         </MenuItem>
-        <MenuItem className={activeIndex === 3 ? `active` : ``}>
-          <StyledLink
-            to={`/about/`}
-            onClick={(e) => handleSubNav(e, 3)}
-            activeClassName={`current`}
-            className={`headline`}
-          >
-            About
-          </StyledLink>
-          <SubMenu>
-            <ul>
-              <li>
-                <SubMenuLink
-                  to={`/about/`}
-                  onClick={handleRouteChange}
-                  activeClassName={`current`}
-                >
-                  Our Why
-                </SubMenuLink>
-              </li>
-              <li>
-                <SubMenuLink
-                  to={`/about/#careers`}
-                  onClick={handleRouteChange}
-                  activeClassName={`current`}
-                >
-                  Careers
-                </SubMenuLink>
-              </li>
-            </ul>
-          </SubMenu>
-        </MenuItem>
-        <MenuItem>
-          <StyledLink
-            to={`/contact/`}
-            onClick={handleRouteChange}
-            className={``}
-            className={`headline`}
-            activeClassName={`current`}
-          >
-            Contact
-          </StyledLink>
-        </MenuItem>
       </Menu>
     </Nav>
   )
