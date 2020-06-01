@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return typeof window !== 'undefined' && (
+  return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <SiteHeader
